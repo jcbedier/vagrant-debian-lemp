@@ -9,4 +9,5 @@ include nginx
 include php-fpm
 include mysql
 include memcached
-
+include php5-cli
+include composer
