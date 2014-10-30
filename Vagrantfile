@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "debian7.3.0"
+  config.vm.box = "jcbedier/debian-7.7-puppet"
 
   # Forward guest port 80 to host port 8888 and name mapping
   config.vm.network :forwarded_port, guest: 80, host: 8888

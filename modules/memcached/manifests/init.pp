@@ -1,13 +1,9 @@
 class memcached {
+  Class['nginx'] -> Class['memcached']
 
   package { "memcached":
     ensure => present,
     require => Exec["apt-get update"]
-  }
-
-  package { "php5-memcached":
-    ensure => present,
-    require => Exec["apt-get update"],
   }
 
   file { "/etc/memcached.conf":
@@ -22,5 +18,10 @@ class memcached {
     subscribe => [
       File["/etc/memcached.conf"]
     ]
+  }
+
+  package { "php5-memcached":
+    ensure => present,
+    require => Exec["apt-get update"],
   }
 }
